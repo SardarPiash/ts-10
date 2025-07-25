@@ -192,7 +192,6 @@ export default function DownNavSection({
                 id={section.type}
                 className="flex flex-col md:flex-row gap-8"
               >
-
                 <div className="flex flex-col flex-1 gap-4">
                   {section.values.map(
                     (data, inx) =>
@@ -219,15 +218,38 @@ export default function DownNavSection({
               </div>
             )}
 
-            {
-                index === 7 && (
-                    <div id={section.type}>
-                        <ContentPreview data={section.values}/>
+            {index === 7 && (
+              <div id={section.type}>
+                <ContentPreview data={section.values} />
+              </div>
+            )}
 
+            {index === 8 && (
+              <div id={section.type}>
+                {section.values.map((data, inx) => (
+                  <div>
+                    <h2 className="text-base font-semibold md:my-3">{data.title}</h2>
+                    <div className="flex justify-between items-center">
+                      <div>
+                        {data?.checklist?.map((ele, i) => (
+                          <p className="pt-1">{ele}</p>
+                        ))}
+                      </div>
+                      <div>
+                        {data.file_url && (
+                          <Image
+                            src={data.file_url}
+                            height={100}
+                            width={100}
+                            alt="image"
+                          />
+                        )}
+                      </div>
                     </div>
-                )
-            }
-
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
