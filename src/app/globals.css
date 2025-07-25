@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+
+
+.description-container-bg {
+  background-image: url('https://cdn.10minuteschool.com/images/ui_%281%29_1716445506383.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.card-price {
+  display: inline-block;
+  width: auto;
+  height: 25px;
+  background-color: rgb(249, 123, 83);
+  border-radius: 3px 4px 4px 3px;
+  border-left: 1px solid rgb(249, 123, 83);
+  margin-left: 15px;
+  position: relative;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 3px 7px;
+}
+
+.card-price::before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: -12px;
+  top: 1px;
+  width: 0px;
+  height: 0px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid rgb(249, 123, 83);
+}
+.swiper-button-next,
+.swiper-button-prev {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background-color: black;
+  border-radius: 9999px;
+  width: 32px;
+  height: 32px;
+}
+
+/* Now directly control the arrow icon */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 14px;   /* Controls arrow size */
+  color: white;      /* Arrow color */
+  font-weight: bold;
+}
+
