@@ -3,20 +3,30 @@ import { getLandingPageData } from "../../api/apidata";
 import Header from "../../component/header";
 import Description from "@/component/description";
 import Image from "next/image";
+import TopSecBanner from "@/component/TopSecBanner.tsx";
+import SliderNav from "@/component/slider-nav";
 
 export default async function Homepage({
   searchParams,
 }: {
-  searchParams: { lang?: string; banner?: string };
+  searchParams: Promise<{ lang?: string; banner?:string; }>;
 }) {
-  const lang = searchParams?.lang === "en" ? "en" : "bn";
-  const isTopBannnerVisible = searchParams?.banner !== "false";
+  const params = await searchParams;
+  const lang = params.lang === "en" ? "en" : "bn";
+  const isTopBannnerVisible = params.banner !== "false";
   const apiData = await getLandingPageData({ lang });
-  
+  console.log(apiData.data.sections,"secccccccccccccccccccccccccccccccccc")
   return (
     <>
       <Header />
       <TopBanner isTopBannnerVisible={isTopBannnerVisible} />
+      <TopSecBanner courseData={apiData} />
+      <div className="w-full ">
+        <div className=" md:mt-4 w-[58%] md:pl-[26px] relative">
+          <SliderNav navSectionData={apiData.data.sections} />
+        </div>
+      </div>
+      
       <Description courseData={apiData} />
       <div className="my-5 border-t flex justify-around items-center">
         <Image
