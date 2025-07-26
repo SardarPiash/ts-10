@@ -9,13 +9,12 @@ import SliderNav from "@/component/slider-nav";
 export default async function Homepage({
   searchParams,
 }: {
-  searchParams: Promise<{ lang?: string; banner?:string; }>;
+  searchParams: Promise<{ lang?: string; banner?: string; }>;
 }) {
   const params = await searchParams;
   const lang = params.lang === "en" ? "en" : "bn";
   const isTopBannnerVisible = params.banner !== "false";
   const apiData = await getLandingPageData({ lang });
-  console.log(apiData.data.sections,"secccccccccccccccccccccccccccccccccc")
   return (
     <>
       <Header />
@@ -26,7 +25,7 @@ export default async function Homepage({
           <SliderNav navSectionData={apiData.data.sections} />
         </div>
       </div>
-      
+
       <Description courseData={apiData} />
       <div className="my-5 border-t flex justify-around items-center">
         <Image

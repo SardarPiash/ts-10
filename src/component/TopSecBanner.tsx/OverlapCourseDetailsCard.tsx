@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
+import VideoCarousel from './VideoCarousel';
 
 export default function OverlapCourseDetailsCard({
   courseData,
@@ -9,7 +10,9 @@ export default function OverlapCourseDetailsCard({
   return (
     <div className="bg-white absolute z-10 top-5 right-3 md:w-[36%] ">
           <div className="border border-gray-300">
-            <div>{/* careousel */}</div>
+            <div>
+              <VideoCarousel media={courseData.data.media}/>
+            </div>
             <div className="md:p-4">
               <div className="flex">
                 <p>tk.1000</p>
