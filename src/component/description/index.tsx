@@ -71,7 +71,7 @@ export default function Description({
         </div>
       </div>
       {/* coursel nav section */}
-      <div>
+      <div className="md:px-[10%] w-full">
         <DownNavSection courseData={courseData.data} />
       </div>
     </div>
