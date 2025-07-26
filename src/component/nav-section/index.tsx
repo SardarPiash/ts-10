@@ -225,31 +225,65 @@ export default function DownNavSection({
             )}
 
             {index === 8 && (
-              <div id={section.type}>
+              <div id={section.type} className="border rounded-md md:px-5 md:py-5">
                 {section.values.map((data, inx) => (
-                  <div key={inx}>
-                    <h2 className="text-base font-semibold md:my-3">{data.title}</h2>
+                  <div key={inx} className="md:py-0">
+                    <h2 className="text-base font-semibold md:my-3 text-[16px]">{data.title}</h2>
                     <div className="flex justify-between items-center">
                       <div>
                         {data?.checklist?.map((ele, i) => (
-                          <p className="pt-1" key={i}>{ele}</p>
+                          <p className="pt-1  md:mb-3 text-[16px] text-[#4B5563]" key={i}>{ele}</p>
                         ))}
                       </div>
-                      <div>
+                      <div className="bg-red-400">
                         {data.file_url && (
                           <Image
                             src={data.file_url}
                             height={100}
                             width={100}
                             alt="image"
+                            className=" md:w-[160px] object-cover"
                           />
                         )}
                       </div>
                     </div>
+                    {
+                      inx === 0 && (
+                        <div className="border-t md:mt-5">
+
+                        </div>
+                      )
+                    }
                   </div>
                 ))}
               </div>
             )}
+
+            {
+              index === 9 && (
+                <div id={section.type} className="relative w-full overflow-hidden bg-no-repeat bg-cover  rounded-lg bg-[url(https://cdn.10minuteschool.com/images/banner_background_1731401239364.png)]">
+                  <div className="text-white py-5 px-5">
+                    <div className="border-4 border-white/30 rounded-md md:px-[40px] md:py-5">
+                      <p className="text-xl font-600 md:mb-2">ঘরে বসে IELTS প্রস্তুতি (Hardcopy Book)</p>
+                      <ul>
+                        <li className="flex items-center gap-1.5">
+                          <span className="text-xl leading-none">•</span>
+                          <p>360 পৃষ্ঠা</p>
+                        </li>
+                        <li className="flex items-center gap-1.5">
+                          <span className="text-xl leading-none">•</span><p>প্রিমিয়াম হার্ডকপি</p></li>
+                        <li className="flex items-center gap-1.5">
+                          <span className="text-xl leading-none">•</span><p>ফ্রি ডেলিভারি</p></li>
+                        <li className="flex items-center gap-1.5">
+                          <span className="text-xl leading-none">•</span><p>৪ কর্মদিবসের মধ্যে সারাদেশে ডেলিভারি</p></li>
+                      </ul>
+
+                    </div>
+
+                  </div>
+                </div>
+              )
+            }
           </div>
         ))}
       </div>
