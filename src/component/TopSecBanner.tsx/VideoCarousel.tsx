@@ -77,7 +77,7 @@ export default function VideoCarousel({ media }: { media: Media[] }) {
       </Carousel>
 
       {/* Thumbnails below */}
-      <div className="flex gap-2 w-full overflow-x-scroll mt-4 hide-scrollbar">
+      <div className="flex gap-2 w-full overflow-x-scroll md:mt-5 hide-scrollbar md:px-3">
         {media.map((item, index) => (
           <div
             key={index}
