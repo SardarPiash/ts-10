@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { SwiperSlide } from "swiper/react";
-import Carousel from '../carousel.tsx/Carousel';
+import Carousel from '../carousel/Carousel';
 
 export default function SliderNav({ navSectionData }: { navSectionData: Section[] }) {
 

@@ -54,6 +54,9 @@ export default function OverlapCourseDetailsCard({
         <p>কোর্সটি সম্পর্কে বিস্তারিত জানতে</p>
         <p className="text-green-400">ফোন করুন (16910)</p>
       </div>
+      <div>
+        
+      </div>
     </div>
   )
 }

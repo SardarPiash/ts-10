@@ -9,7 +9,7 @@ import SliderNav from "@/component/slider-nav";
 export default async function Homepage({
   searchParams,
 }: {
-  searchParams: Promise<{ lang?: string; banner?: string; }>;
+  searchParams: Promise<{ lang?: string; banner?: string }>;
 }) {
   const params = await searchParams;
   const lang = params.lang === "en" ? "en" : "bn";
@@ -20,8 +20,8 @@ export default async function Homepage({
       <Header />
       <TopBanner isTopBannnerVisible={isTopBannnerVisible} />
       <TopSecBanner courseData={apiData} />
-      <div className="w-full ">
-        <div className=" md:mt-4 w-[58%] md:pl-[26px] relative">
+      <div className="sticky w-[58%] md:top-[66px] bg-white mt-2 z-10 py-5">
+        <div className=" md:pl-[26px]">
           <SliderNav navSectionData={apiData.data.sections} />
         </div>
       </div>
@@ -34,8 +34,7 @@ export default async function Homepage({
           height={80}
           width={80}
         />
-        <p> স্বত্ব © ২০১৫ - ২০২৫ টেন মিনিট
-          স্কুল কর্তৃক সর্বস্বত্ব সংরক্ষিত </p>
+        <p> স্বত্ব © ২০১৫ - ২০২৫ টেন মিনিট স্কুল কর্তৃক সর্বস্বত্ব সংরক্ষিত </p>
       </div>
     </>
   );

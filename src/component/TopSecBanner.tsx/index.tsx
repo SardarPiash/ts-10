@@ -1,7 +1,7 @@
 import React from 'react'
 import StarRating from '../ratting';
-import Image from 'next/image';
 import OverlapCourseDetailsCard from './OverlapCourseDetailsCard';
+import StickyCardWrapper from './newDiv';
 
 export default function TopSecBanner({
   courseData,
@@ -23,7 +23,9 @@ export default function TopSecBanner({
         </div>
 
         {/* overlap card */}
-        <OverlapCourseDetailsCard courseData={courseData} />
+        {/* <OverlapCourseDetailsCard courseData={courseData} /> */}
+        <StickyCardWrapper courseData={courseData} />
+
       </div>
   )
 }

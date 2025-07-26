@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Carousel from "../carousel.tsx/Carousel";
+import Carousel from "../carousel/Carousel";
 import { SwiperSlide } from "swiper/react";
 
 interface Media {

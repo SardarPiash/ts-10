@@ -6,8 +6,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export default function ContentPreview({ data }: { data: SectionValue[] }) {
   return (
-    <div>
-      <div>
+    <div className="">
         {data.map((element, inx) => (
           <div key={inx}>
             <Accordion key={inx}>
@@ -35,6 +34,5 @@ export default function ContentPreview({ data }: { data: SectionValue[] }) {
           </div>
         ))}
       </div>
-    </div>
   );
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Carousel from '../carousel.tsx/Carousel'
+import Carousel from '../carousel/Carousel'
 import YoutubeVideo from '../youtube-frame/YoutubeVideo'
 import { SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
