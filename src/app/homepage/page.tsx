@@ -6,12 +6,11 @@ import Description from "@/component/description";
 export default async function Homepage({
   searchParams,
 }: {
-  searchParams: Promise<{ lang?: string; banner?:string; }>;
+  searchParams: { lang?: string; banner?: string };
 }) {
-  const params = await searchParams;
-  const lang = params.lang === "en" ? "en" : "bn";
-  const isTopBannnerVisible = params.banner !== "false";
-  const apiData = await getLandingPageData({ lang: lang });
+  const lang = searchParams?.lang === "en" ? "en" : "bn";
+  const isTopBannnerVisible = searchParams?.banner !== "false";
+  const apiData = await getLandingPageData({ lang });
   console.log(apiData);
   return (
     <>

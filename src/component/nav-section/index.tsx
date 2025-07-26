@@ -227,12 +227,12 @@ export default function DownNavSection({
             {index === 8 && (
               <div id={section.type}>
                 {section.values.map((data, inx) => (
-                  <div>
+                  <div key={inx}>
                     <h2 className="text-base font-semibold md:my-3">{data.title}</h2>
                     <div className="flex justify-between items-center">
                       <div>
                         {data?.checklist?.map((ele, i) => (
-                          <p className="pt-1">{ele}</p>
+                          <p className="pt-1" key={i}>{ele}</p>
                         ))}
                       </div>
                       <div>
