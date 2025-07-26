@@ -1,17 +1,17 @@
 "use client";
 
 import { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Check } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 
+import Image from "next/image";
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
-import Link from "next/link";
-import Image from "next/image";
 import ContentPreview from "../content-preview";
+import FAQ from "../faq";
 import StudentTalk from "../student-talk";
 
 export default function DownNavSection({
@@ -292,6 +292,37 @@ export default function DownNavSection({
                   <StudentTalk data={section.values} />
 
 
+                </div>
+              )
+            }
+
+            {
+              index === 13 && (
+                <div id={section.type} className="border border-[#dbe1eb] md:p-5 rounded-md">
+                  <div className="flex gap-1.5 items-center">
+                    <Check className="text-sky-500 w-5 h-5 mt-1" />
+                    <p>ইন্টারনেট সংযোগ (ওয়াইফাই বা মোবাইল ইন্টারনেট)</p>
+                  </div>
+                  <div className="flex gap-1.5 items-center">
+                    <Check className="text-sky-500 w-5 h-5 mt-1" />
+                    <p>স্মার্টফোন অথবা পিসি</p>
+                  </div>
+                </div>
+              )
+            }
+
+             {
+              index === 14 && (
+                <div id={section.type} className="border border-[#dbe1eb] md:p-5 rounded-md">
+                  <p>কীভাবে পেমেন্ট করবেন তা বিস্তারিত জানতে <span className="underline cursor-pointer text-green-500">এই ভিডিওটি দেখুন</span></p>
+                </div>
+              )
+            }
+
+            {
+              index === 15 && (
+                <div id={section.type} className="border border-[#dbe1eb] md:p-5 rounded-md">
+                  <FAQ data={section.values} />
                 </div>
               )
             }

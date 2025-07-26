@@ -2,6 +2,7 @@ import TopBanner from "@/component/top-banner";
 import { getLandingPageData } from "../../api/apidata";
 import Header from "../../component/header";
 import Description from "@/component/description";
+import Image from "next/image";
 
 export default async function Homepage({
   searchParams,
@@ -11,12 +12,22 @@ export default async function Homepage({
   const lang = searchParams?.lang === "en" ? "en" : "bn";
   const isTopBannnerVisible = searchParams?.banner !== "false";
   const apiData = await getLandingPageData({ lang });
-  // console.log(apiData);
+  
   return (
     <>
       <Header />
-      <TopBanner isTopBannnerVisible={isTopBannnerVisible}/>
-      <Description courseData = {apiData}/>
+      <TopBanner isTopBannnerVisible={isTopBannnerVisible} />
+      <Description courseData={apiData} />
+      <div className="my-5 border-t flex justify-around items-center">
+        <Image
+          src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg"
+          alt="10 Minute School Logo"
+          height={80}
+          width={80}
+        />
+        <p> স্বত্ব © ২০১৫ - ২০২৫ টেন মিনিট
+          স্কুল কর্তৃক সর্বস্বত্ব সংরক্ষিত </p>
+      </div>
     </>
   );
 }
