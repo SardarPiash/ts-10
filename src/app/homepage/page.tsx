@@ -11,7 +11,7 @@ export default async function Homepage({
   const lang = searchParams?.lang === "en" ? "en" : "bn";
   const isTopBannnerVisible = searchParams?.banner !== "false";
   const apiData = await getLandingPageData({ lang });
-  console.log(apiData);
+  // console.log(apiData);
   return (
     <>
       <Header />

@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import ContentPreview from "../content-preview";
+import StudentTalk from "../student-talk";
 
 export default function DownNavSection({
   courseData,
@@ -281,6 +282,16 @@ export default function DownNavSection({
                     </div>
 
                   </div>
+                </div>
+              )
+            }
+
+            {
+              index === 12 && (
+                <div id={section.type}>
+                  <StudentTalk data={section.values} />
+
+
                 </div>
               )
             }
