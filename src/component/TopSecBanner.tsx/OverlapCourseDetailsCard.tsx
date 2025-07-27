@@ -8,7 +8,7 @@ export default function OverlapCourseDetailsCard({
   courseData: ApiResponse;
 }) {
   return (
-    <div className="bg-white absolute z-10 top-5 right-3 md:w-[30%] p-4">
+    <div className="bg-white absolute z-10 top-8 right-3 md:w-[30%] p-4">
       <div className="border border-gray-300">
         <div>
           <VideoCarousel media={courseData.data.media} />
