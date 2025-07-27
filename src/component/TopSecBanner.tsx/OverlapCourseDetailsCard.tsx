@@ -9,7 +9,7 @@ export default function OverlapCourseDetailsCard({
   courseData: ApiResponse;
 }) {
   return (
-    <div className="bg-white absolute z-10 top-14 right-[8%] md:w-[25%] p-4 border border-gray-300 overlap-card-container">
+    <div className="bg-white absolute z-10 top-14 right-[12%] md:w-[26%] p-4 border border-gray-300 overlap-card-container">
       <div className="">
         <div>
           <VideoCarousel media={courseData.data.media} />

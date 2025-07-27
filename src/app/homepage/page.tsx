@@ -25,7 +25,7 @@ export default async function Homepage({
 
         <Description courseData={apiData} />
       </div>
-      <div className="my-5 border-t flex justify-around items-center">
+      <div className="my-5 border-t border-[#dbe1eb] flex justify-around items-center">
         <Image
           src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg"
           alt="10 Minute School Logo"

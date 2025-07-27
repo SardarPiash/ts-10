@@ -3,7 +3,7 @@ import React from "react";
 
 export default function SectionType5({ section }: { section: Section }) {
   return (
-    <div id={section.type} className="flex flex-col md:flex-row gap-8 border rounded-md md:p-5">
+    <div id={section.type} className="flex flex-col md:flex-row gap-8 border border-[#dbe1eb] rounded-md md:p-5">
       <div className="flex flex-col flex-1 gap-4">
         {section.values.map(
           (data, inx) =>

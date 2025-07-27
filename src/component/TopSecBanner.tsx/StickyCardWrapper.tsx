@@ -35,7 +35,7 @@ export default function StickyCardWrapper({ courseData }: { courseData: ApiRespo
       </div>
 
       {showSticky && (
-        <div className="fixed z-50 top-[100px] right-[8%] md:w-[25%] overlap-card-container">
+        <div className="fixed z-50 top-[100px] right-[12%] md:w-[26%] overlap-card-container">
             <div className="bg-white border border-gray-200 p-5">
               <CardTextContent courseData={courseData} />
             </div>

@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function SectionType8({section}:{section:Section}) {
   return (
-    <div id={section.type} className="border rounded-md md:px-5 md:py-5">
+    <div id={section.type} className="border border-[#dbe1eb] rounded-md md:px-5 md:py-5">
                 {section.values.map((data, inx) => (
                   <div key={inx} className="md:py-0">
                     <h2 className="text-base font-semibold md:my-3 text-[16px]">{data.title}</h2>
@@ -27,7 +27,7 @@ export default function SectionType8({section}:{section:Section}) {
                     </div>
                     {
                       inx === 0 && (
-                        <div className="border-t md:mt-5">
+                        <div className="border-t border-[#dbe1eb] md:mt-5">
 
                         </div>
                       )

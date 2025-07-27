@@ -16,7 +16,7 @@ export default function LangChangeButton() {
   return (
     <button
       onClick={handleLang}
-      className="border border-black rounded md:px-3 cursor-pointer"
+      className="border border-[#dbe1eb] rounded md:px-3 cursor-pointer"
     >
       {currentLang === "bn" ? "EN" : "BN"}
     </button>

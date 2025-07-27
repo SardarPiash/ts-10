@@ -5,7 +5,7 @@ export default function SectionType13({ section }: { section: Section }) {
   return (
     <div
       id={section.type}
-      className="border border-black md:p-5 rounded-md"
+      className="md:border border-[#dbe1eb] md:p-5 rounded-md"
     >
       <div className="flex gap-1.5 items-center">
         <Check className="text-sky-500 w-5 h-5 mt-1" />

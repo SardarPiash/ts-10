@@ -6,7 +6,7 @@ export default function SectionType2({section}:{section:Section}) {
   return (
     <div
         id={section.type}
-        className="border p-5 flex flex-row items-center rounded-md"
+        className="border border-[#dbe1eb] p-5 flex flex-row items-center rounded-md"
       >
         <div>
           {section.values[0]?.image && (
@@ -22,7 +22,7 @@ export default function SectionType2({section}:{section:Section}) {
         <div className="flex flex-col md:ml-4 text-black">
           <Link
             href="#munzarin-shohid"
-            className="text-[18px] cursor-hover hover:text-green-500"
+            className="text-[18px] cursor-hover hover:text-green-500 md:py-1"
           >
             {section.values[0].name}
           </Link>

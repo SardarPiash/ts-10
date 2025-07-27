@@ -8,8 +8,8 @@ export default function SliderNav({ navSectionData }: { navSectionData: Section[
 
      if (!navSectionData || navSectionData.length === 0) return null;
   return (
-    <div className="sticky w-[68%] md:top-[66px] md:pl-[26px] bg-white mt-2 z-10  ">
-      <div className="border-b border-gray-400 py-5">
+    <div className="sticky w-[60%] md:top-[66px] md:pl-[26px] bg-white mt-2 z-10  ">
+      <div className="border-b border-[#dbe1eb] py-5">
         <Carousel leftButtonPosition="left-2 top-3" rightButtonPosition="right-2 top-3" slidesPerView={3.5}>
         <>
           {navSectionData

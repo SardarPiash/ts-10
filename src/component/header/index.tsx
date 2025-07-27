@@ -5,7 +5,7 @@ import LangChangeButton from "../lang-change";
 
 export default function Header() {
   return (
-    <div className="bg-white sticky top-0 z-50 flex gap-1 md:py-3 md:px-7 cursor-pointer shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]">
+    <div className="bg-white sticky top-0 z-100 flex gap-1 md:py-3 md:px-7 cursor-pointer shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]">
       <Image
         src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg"
         alt="10 Minute School Logo"
