@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import OverlapCourseDetailsCard from './OverlapCourseDetailsCard';
+import CardTextContent from './CardTextContent';
 
 export default function StickyCardWrapper({ courseData }: { courseData: ApiResponse }) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -15,7 +16,7 @@ export default function StickyCardWrapper({ courseData }: { courseData: ApiRespo
       {
         root: null,
         threshold: 1.0,
-        rootMargin: '500px 0px 0px 0px',
+        rootMargin: '650px 0px 0px 0px',
       }
     );
 
@@ -34,16 +35,14 @@ export default function StickyCardWrapper({ courseData }: { courseData: ApiRespo
       </div>
 
       {showSticky && (
-        <div className="fixed z-50 top-[100px] right-4 w-[300px] shadow-lg bg-white border border-gray-200 p-4 rounded-md">
-          <p className="text-lg font-semibold mb-2">এই কোর্সে যা থাকছে</p>
-          <ul className="list-disc ml-4 text-sm">
-            {courseData.data.checklist?.slice(0, 4).map((item, index) => (
-              <li key={index}>{item.text}</li>
-            ))}
-          </ul>
-          <button className="mt-4 bg-green-500 text-white py-2 px-4 w-full rounded">
-            {courseData.data.cta_text.name}
-          </button>
+        <div className="fixed z-50 top-[100px] right-[8%] md:w-[25%] overlap-card-container">
+            <div className="bg-white border border-gray-200 p-5">
+              <CardTextContent courseData={courseData} />
+            </div>
+            <div className="text-sm flex justify-between mt-4 md:px-0">
+              <p>কোর্সটি সম্পর্কে বিস্তারিত জানতে</p>
+              <p className="text-green-400">ফোন করুন (16910)</p>
+            </div>
         </div>
       )}
     </>

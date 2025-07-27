@@ -12,7 +12,7 @@ export default async function Homepage({
   searchParams: Promise<{ lang?: string; banner?: string }>;
 }) {
   const params = await searchParams;
-  const lang = params.lang === "en" ? "en" : "bn";
+  const lang = params.lang === "en" || params.lang === "bn" ? params.lang : "bn";
   const isTopBannnerVisible = params.banner !== "false";
   const apiData = await getLandingPageData({ lang });
   return (
@@ -20,13 +20,11 @@ export default async function Homepage({
       <Header />
       <TopBanner isTopBannnerVisible={isTopBannnerVisible} />
       <TopSecBanner courseData={apiData} />
-      <div className="sticky w-[58%] md:top-[66px] bg-white mt-2 z-10 py-5">
-        <div className=" md:pl-[26px]">
-          <SliderNav navSectionData={apiData.data.sections} />
-        </div>
-      </div>
+      <div className="body-container">
+        <SliderNav navSectionData={apiData.data.sections} />
 
-      <Description courseData={apiData} />
+        <Description courseData={apiData} />
+      </div>
       <div className="my-5 border-t flex justify-around items-center">
         <Image
           src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg"

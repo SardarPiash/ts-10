@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
-import Image from "next/image";
-import { useSearchParams ,useRouter} from "next/navigation";
+import { RxCross2 } from "react-icons/rx";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function TopBannerCloseButton() {
     const router = useRouter();
@@ -18,13 +17,7 @@ export default function TopBannerCloseButton() {
   return (
     <div>
       <button className=" bg-transparent cursor-pointer" onClick={(e)=>{handleCloseBanner()}}>
-        <Image
-          src="/icon/cross-Icon.png"
-          alt="close icon"
-          width={32}
-          height={32}
-          className="md:w-6 md:h-6"
-        />
+        <RxCross2 color="white" className="w-6 h-6"/>
       </button>
     </div>
   );

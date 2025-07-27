@@ -8,7 +8,7 @@ export default function TopSecBanner({
   courseData: ApiResponse;
 }) {
   return (
-        <div className="description-container-bg md:py-10 md:px-[8%] relative min-h-[300px]">
+        <div className="description-container-bg md:py-14 md:px-[8%] relative min-h-[300px]">
         <div className="text-white w-[60%] flex flex-col justify-start items-start h-full">
           <h1 className="md:text-[36px] font-bold">{courseData.data.title}</h1>
           <div className="flex items-center gap-1.5 text-base">
@@ -22,7 +22,9 @@ export default function TopSecBanner({
         </div>
 
         {/* overlap card */}
-        <StickyCardWrapper courseData={courseData} />
+        <div>
+          <StickyCardWrapper courseData={courseData} />
+        </div>
 
       </div>
   )
