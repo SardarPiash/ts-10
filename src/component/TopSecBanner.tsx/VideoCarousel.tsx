@@ -17,7 +17,7 @@ export default function VideoCarousel({ media }: { media: Media[] }) {
   };
 
   return (
-    <div>
+    <div className="">
       <Carousel
         leftButtonPosition="top-1/2 left-0"
         rightButtonPosition="top-1/2 right-0"
@@ -90,7 +90,7 @@ export default function VideoCarousel({ media }: { media: Media[] }) {
             <img
               src={item.resource_type === "video" ? item.thumbnail_url : item.resource_value}
               alt="Thumbnail"
-              className="w-full h-full object-cover"
+              className="w-10 md:w-full h-full object-cover"
             />
           </div>
         ))}

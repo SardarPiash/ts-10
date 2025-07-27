@@ -37,7 +37,7 @@ export default function DownNavSection({
   courseData: CourseData;
 }) {
   return (
-    <div className="md:mt-4 w-[60%] md:pl-[26px] relative">
+    <div className="md:mt-4 w-full md:w-[60%] md:pl-[26px] relative">
       <div className="mt-4">
         {courseData.sections?.map((section, index) => {
           if ([6, 10, 11].includes(index)) return null;
@@ -45,8 +45,8 @@ export default function DownNavSection({
           const SectionComponent = sectionComponentMap[index];
 
           return (
-            <div key={index} className="mt-10">
-              <p className="md:text-[24px] md:mb-4">{section.name}</p>
+            <div key={index} className="mt-9 md:mt-10 px-3">
+              <p className="text-[20px] font-semibold md:text-[24px] mb-4">{section.name}</p>
                 {SectionComponent && <SectionComponent section={section} />}
             </div>
           );

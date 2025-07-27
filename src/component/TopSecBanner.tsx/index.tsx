@@ -1,6 +1,7 @@
 import React from 'react'
 import StarRating from '../ratting';
 import StickyCardWrapper from './StickyCardWrapper';
+import VideoCarousel from './VideoCarousel';
 
 export default function TopSecBanner({
   courseData,
@@ -9,7 +10,10 @@ export default function TopSecBanner({
 }) {
   return (
         <div className="description-container-bg md:py-14 md:px-[8%] relative min-h-[300px]">
-        <div className="text-white w-[60%] flex flex-col justify-start items-start h-full">
+        <div className="px-4 md:hidden">
+          <VideoCarousel media={courseData.data.media}/>
+        </div>
+        <div className="text-white w-full md:w-[60%] flex flex-col justify-start items-start h-full">
           <h1 className="md:text-[36px] font-bold">{courseData.data.title}</h1>
           <div className="flex items-center gap-1.5 text-base">
             <StarRating rating={3.5} />
@@ -22,7 +26,7 @@ export default function TopSecBanner({
         </div>
 
         {/* overlap card */}
-        <div>
+        <div className="hidden md:block">
           <StickyCardWrapper courseData={courseData} />
         </div>
 

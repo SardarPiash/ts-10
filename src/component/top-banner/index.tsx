@@ -17,7 +17,7 @@ export default function TopBanner({
         alt="top-banner"
         width={1800}
         height={150}
-        className="w-full h-auto object-cover"
+        className="w-full h-full object-contain md:object-cover"
         priority
       />
       <div className=" absolute top-0 right-0">
