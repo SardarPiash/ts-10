@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import CardTextContent from "../TopSecBanner.tsx/CardTextContent";
+import CardTextContent from "../TopSecBanner/CardTextContent";
 import { useStickyObserver } from "@/custom-hook/sticky-observer/useStickyObserver";
 
 export default function MobileCourseDetails({

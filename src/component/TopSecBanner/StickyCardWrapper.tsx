@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import OverlapCourseDetailsCard from './OverlapCourseDetailsCard';
 import CardTextContent from './CardTextContent';
 import { useStickyObserver } from '@/custom-hook/sticky-observer/useStickyObserver';
+import { useRef } from 'react';
 
 export default function StickyCardWrapper({ courseData }: { courseData: ApiResponse }) {
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef =useRef<HTMLDivElement>(null);
   const showSticky = useStickyObserver(cardRef, {offset:650});
 
   return (

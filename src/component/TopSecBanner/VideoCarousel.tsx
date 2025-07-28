@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Carousel from "../carousel/Carousel";
 import { SwiperSlide } from "swiper/react";
+import Image from "next/image";
 
 interface Media {
   thumbnail_url: string;
@@ -44,10 +45,12 @@ export default function VideoCarousel({ media }: { media: Media[] }) {
                     className="w-full h-full cursor-pointer relative"
                     onClick={() => setActiveIndex(index)}
                   >
-                    <img
+                    <Image
                       src={item.thumbnail_url}
                       alt="Video thumbnail"
                       className="w-full h-full object-cover rounded"
+                      height={100}
+                      width={100}
                     />
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                       <svg
@@ -65,10 +68,12 @@ export default function VideoCarousel({ media }: { media: Media[] }) {
               </div>
             ) : (
               <div className="w-full aspect-video relative flex items-center justify-center cursor-default">
-                <img
+                <Image
                   src={item.resource_value}
                   alt="Image thumbnail"
                   className="w-full h-full object-cover rounded"
+                  height={100}
+                  width={100}
                 />
               </div>
             )}
@@ -86,10 +91,12 @@ export default function VideoCarousel({ media }: { media: Media[] }) {
             }`}
             onClick={() => handleThumbnailClick(index)}
           >
-            <img
+            <Image
               src={item.resource_type === "video" ? item.thumbnail_url : item.resource_value}
               alt="Thumbnail"
               className=" w-full h-full md:object-cover"
+              height={100}
+              width={100}
             />
           </div>
         ))}

@@ -39,7 +39,7 @@ export default function Search() {
       />
 
       {showSearchItem && (
-        <div className="absolute top-full mt-2 w-full bg-white shadow-lg rounded-md p-4 z-50">
+        <div className="absolute top-8 mt-2 w-full bg-white shadow-lg rounded-md md:p-4 z-50">
             <li>SSC বাংলা ১ম পত্র ফাইনাল প্রস্তুতি কোর্স</li>
             <li>HSC ICT মাস্টারক্লাস</li>
             <li>জব প্রিপারেশন: লিখিত ও ভাইভা গাইডলাইন</li>

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+
 import React from 'react'
 import VideoCarousel from './VideoCarousel';
 import CardTextContent from './CardTextContent';

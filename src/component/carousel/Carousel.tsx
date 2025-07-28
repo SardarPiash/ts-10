@@ -3,7 +3,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Navigation } from "swiper/modules";
-import { Swiper } from "swiper/react";
+import { Swiper, SwiperClass } from "swiper/react"; // ✅ use SwiperClass
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,7 +15,7 @@ interface CarouselProps {
   rightButtonPosition: string;
   activeIndex?: number;
   onSlideChange?: (index: number) => void;
-  isFromVideoCarousel?:boolean;
+  isFromVideoCarousel?: boolean;
 }
 
 export default function Carousel({
@@ -23,7 +23,7 @@ export default function Carousel({
   slidesPerView,
   leftButtonPosition,
   rightButtonPosition,
-  activeIndex,
+  activeIndex = 0,
   onSlideChange,
 }: CarouselProps) {
   const prevRef = useRef<HTMLDivElement | null>(null);
@@ -32,11 +32,11 @@ export default function Carousel({
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
-  const swiperInstance = useRef<any>(null);
+  const swiperInstance = useRef<SwiperClass | null>(null); // ✅ use SwiperClass instead of `any`
 
   useEffect(() => {
-    if (swiperInstance.current) {
-      swiperInstance.current.slideTo(activeIndex); 
+    if (swiperInstance.current && typeof activeIndex === "number") {
+      swiperInstance.current.slideTo(activeIndex);
     }
   }, [activeIndex]);
 
@@ -61,15 +61,17 @@ export default function Carousel({
       </div>
 
       <Swiper
-        ref={swiperInstance} 
         modules={[Navigation]}
         onSwiper={(swiper) => {
-          // @ts-ignore
-          swiperInstance.current = swiper; 
-          // @ts-ignore
+          swiperInstance.current = swiper;
+
+          // @ts-expect-error — Swiper types are missing navigation El mutation
           swiper.params.navigation.prevEl = prevRef.current;
-          // @ts-ignore
+
+          // @ts-expect-error — Swiper types are missing navigation El mutation
           swiper.params.navigation.nextEl = nextRef.current;
+
+          // @ts-expect-error — Swiper types are missing navigation init() and update()
           swiper.navigation.init();
           swiper.navigation.update();
         }}
@@ -77,8 +79,8 @@ export default function Carousel({
           const currentIndex = swiper.activeIndex;
           setIsBeginning(swiper.isBeginning);
           setIsEnd(swiper.isEnd);
-          if(onSlideChange){
-              onSlideChange(currentIndex);
+          if (onSlideChange) {
+            onSlideChange(currentIndex);
           }
         }}
         onReachBeginning={() => setIsBeginning(true)}
@@ -90,7 +92,7 @@ export default function Carousel({
         slidesPerView={slidesPerView}
         spaceBetween={2}
         className="w-full"
-        initialSlide={activeIndex} 
+        initialSlide={activeIndex}
       >
         {children}
       </Swiper>
