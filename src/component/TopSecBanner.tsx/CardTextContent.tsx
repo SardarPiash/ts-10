@@ -15,13 +15,13 @@ export default function CardTextContent({
             </div>
             <div className="my-2">
                 <button
-                    className=" bg-green-500 md:w-full py-2 text-white text-[16px] rounded"
+                    className=" bg-green-500 w-full md:w-full py-2 text-white text-[16px] rounded-md border-b-4 border-b-green-800"
                     value={courseData.data.cta_text.value}
                 >
                     {courseData.data.cta_text.name}
                 </button>
             </div>
-            <div className="md:mt-5">
+            <div className="mt-5">
                 <h2 className="text-[20px] font-semibold mb-3">
                     এই কোর্সে যা থাকছে
                 </h2>

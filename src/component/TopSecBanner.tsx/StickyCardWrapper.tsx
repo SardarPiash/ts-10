@@ -3,30 +3,11 @@
 import { useEffect, useRef, useState } from 'react';
 import OverlapCourseDetailsCard from './OverlapCourseDetailsCard';
 import CardTextContent from './CardTextContent';
+import { useStickyObserver } from '@/custom-hook/sticky-observer/useStickyObserver';
 
 export default function StickyCardWrapper({ courseData }: { courseData: ApiResponse }) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [showSticky, setShowSticky] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setShowSticky(!entry.isIntersecting && entry.intersectionRatio === 0);
-      },
-      {
-        root: null,
-        threshold: 1.0,
-        rootMargin: '650px 0px 0px 0px',
-      }
-    );
-
-    const currentRef = cardRef.current;
-    if (currentRef) observer.observe(currentRef);
-
-    return () => {
-      if (currentRef) observer.unobserve(currentRef);
-    };
-  }, []);
+  const showSticky = useStickyObserver(cardRef, {offset:650});
 
   return (
     <>
