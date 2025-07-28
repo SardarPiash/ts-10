@@ -6,11 +6,31 @@ import MobileCourseDetails from "@/component/course-details-mobile/MobileCourseD
 import Image from "next/image";
 import TopSecBanner from "@/component/TopSecBanner";
 import { getLandingPageData } from "@/api/apidata";
+import { Metadata } from "next";
 
 interface Props {
   searchParams: { lang?: "en" | "bn"; banner?: string };
   courseData: ApiResponse;
   isTopBannnerVisible: boolean;
+}
+
+
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: { lang?: "en" | "bn"; banner?: string };
+}): Promise<Metadata> {
+  const apiData = await getLandingPageData({ lang:"bn" });
+
+  return {
+    title: apiData.data.title,
+    description: apiData.data.description,
+    openGraph: {
+      title: apiData.data.title,
+      description: apiData.data.description,
+    },
+  };
 }
 
 export default async function Homepage({
