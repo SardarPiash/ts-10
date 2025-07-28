@@ -5,7 +5,7 @@ import Description from "@/component/description";
 import Image from "next/image";
 import TopSecBanner from "@/component/TopSecBanner.tsx";
 import SliderNav from "@/component/slider-nav";
-import CardTextContent from "@/component/TopSecBanner.tsx/CardTextContent";
+import MobileCourseDetails from "@/component/course-details-mobile/MobileCourseDetails";
 
 export default async function Homepage({
   searchParams,
@@ -21,9 +21,7 @@ export default async function Homepage({
       <Header />
       <TopBanner isTopBannnerVisible={isTopBannnerVisible} />
       <TopSecBanner courseData={apiData} />
-      <div className="md:hidden px-5 pt-5">
-        <CardTextContent courseData={apiData}/>
-      </div>
+      <MobileCourseDetails courseData={apiData}/>
       <div className="body-container">
         <div className="hidden md:block">
           <SliderNav navSectionData={apiData.data.sections} />
