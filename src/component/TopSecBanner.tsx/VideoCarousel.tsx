@@ -17,7 +17,7 @@ export default function VideoCarousel({ media }: { media: Media[] }) {
   };
 
   return (
-    <div className="">
+    <div className="pt-5 md:pt-0">
       <Carousel
         leftButtonPosition="top-1/2 left-0"
         rightButtonPosition="top-1/2 right-0"
@@ -77,20 +77,19 @@ export default function VideoCarousel({ media }: { media: Media[] }) {
       </Carousel>
 
       {/* Thumbnails below */}
-      <div className="flex gap-2 w-full overflow-x-scroll md:mt-5 hide-scrollbar md:px-3">
+      <div className="flex gap-2 w-full overflow-x-scroll mt-2 md:mt-5 hide-scrollbar md:px-3">
         {media.map((item, index) => (
           <div
             key={index}
-            className={`cursor-pointer rounded overflow-hidden border-2 ${
+            className={`cursor-pointer rounded overflow-hidden border-2 w-[60px] h-[36] md:w-[100px] md:h-[60px] shrink-0 ${
               activeIndex === index ? "border-blue-500" : "border-transparent"
             }`}
-            style={{ width: 100, height: 60, flexShrink: 0 }}
             onClick={() => handleThumbnailClick(index)}
           >
             <img
               src={item.resource_type === "video" ? item.thumbnail_url : item.resource_value}
               alt="Thumbnail"
-              className="w-10 md:w-full h-full object-cover"
+              className=" w-full h-full md:object-cover"
             />
           </div>
         ))}

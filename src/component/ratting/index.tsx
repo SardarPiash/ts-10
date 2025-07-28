@@ -16,13 +16,13 @@ const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
   for (let i = 0; i < totalStars; i++) {
     if (i < fullStars) {
       stars.push(
-        <Star key={i} className="w-6 h-6 text-yellow-500 fill-yellow-500" />
+        <Star key={i} className="w-4 h-5 md:w-6 md:h-6 text-yellow-500 fill-yellow-500" />
       );
     } else if (i === fullStars && hasHalfStar) {
       stars.push(
         <Star
           key={i}
-          className="w-6 h-6 text-yellow-500"
+          className="w-4 h-5 md:w-6 md:h-6 text-yellow-500"
           style={{ fill: 'url(#halfGradient)', stroke: '#facc15' }}
         />
       );
@@ -30,7 +30,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
       stars.push(
         <Star
           key={i}
-          className="w-6 h-6 text-yellow-500"
+          className="w-4 h-5 md:w-6 md:h-6 text-yellow-500"
           style={{ fill: 'white', stroke: '#facc15', strokeWidth: 2 }}
         />
       );
@@ -38,7 +38,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
   }
 
   return (
-    <div className="flex items-center space-x-1 bg-transparent p-2 rounded-md">
+    <div className="flex items-center space-x-1 bg-transparent md:p-2 rounded-md">
       <svg width="0" height="0">
         <defs>
           <linearGradient id="halfGradient" x1="0" x2="100%" y1="0" y2="0">
