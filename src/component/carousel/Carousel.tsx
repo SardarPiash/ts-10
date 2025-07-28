@@ -71,7 +71,6 @@ export default function Carousel({
           // @ts-expect-error — Swiper types are missing navigation El mutation
           swiper.params.navigation.nextEl = nextRef.current;
 
-          // @ts-expect-error — Swiper types are missing navigation init() and update()
           swiper.navigation.init();
           swiper.navigation.update();
         }}

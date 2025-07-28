@@ -1,14 +1,13 @@
-// Top-level interface for the entire JSON response
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface ApiResponse {
   code: number;
   data: CourseData;
-  error: any[]; // Assuming error is an array of any type, as it's empty in the provided JSON
+  error: unknown[];
   message: string;
-  payload: any[]; // Assuming payload is an array of any type, as it's empty in the provided JSON
+  payload: unknown[];
   status_code: number;
 }
 
-// Interface for the main course data
 interface CourseData {
   slug: string;
   id: number;
@@ -21,13 +20,14 @@ interface CourseData {
   start_at: string;
   media: Media[];
   checklist: ChecklistItem[];
-  seo: any[]; // Assuming seo is an array of any type, as it's empty in the provided JSON
+  seo: unknown[];
   cta_text: CtaText;
   sections: Section[];
   is_cohort_based_course: boolean;
-  secondary_cta_group: any[]; // Assuming secondary_cta_group is an array of any type, as it's empty
+  secondary_cta_group: unknown[];
   delivery_method: string;
 }
+
 
 // Interface for old_info
 interface OldInfo {

@@ -1,5 +1,6 @@
 'use client'; 
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface YouTubeVideoProps {
@@ -19,10 +20,12 @@ export default function YoutubeVideo({ videoId, thumbnail, title }: YouTubeVideo
     >
       {!isPlaying && (
         <>
-          <img
+          <Image
             src={thumbnail}
             alt={title}
             className="absolute inset-0 w-full h-full object-cover rounded-lg transition duration-300"
+            height={100}
+            width={100}
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="bg-white/80 rounded-full p-3">

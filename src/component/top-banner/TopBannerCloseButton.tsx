@@ -16,7 +16,7 @@ export default function TopBannerCloseButton() {
     }
   return (
     <div>
-      <button className=" bg-transparent cursor-pointer" onClick={(e)=>{handleCloseBanner()}}>
+      <button className=" bg-transparent cursor-pointer" onClick={()=>{handleCloseBanner()}}>
         <RxCross2 color="white" className="w-6 h-6"/>
       </button>
     </div>

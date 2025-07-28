@@ -5,6 +5,7 @@ import SliderNav from "@/component/slider-nav";
 import MobileCourseDetails from "@/component/course-details-mobile/MobileCourseDetails";
 import Image from "next/image";
 import TopSecBanner from "@/component/TopSecBanner";
+import { getLandingPageData } from "@/api/apidata";
 
 interface Props {
   searchParams: { lang?: "en" | "bn"; banner?: string };
@@ -12,21 +13,31 @@ interface Props {
   isTopBannnerVisible: boolean;
 }
 
-export default function Homepage({
-  courseData,
-  isTopBannnerVisible,
-}: Props) {
+export default async function Homepage({
+  searchParams,
+}: {
+  searchParams: Promise<{ lang?: "en" | "bn"; banner?: string }>;
+}) {
+  const searchPageParams = await searchParams;
+  
+    const lang =
+      searchPageParams?.lang === "en" || searchPageParams?.lang === "bn"
+        ? searchPageParams.lang
+        : "bn";
+    const isTopBannnerVisible = searchPageParams?.banner !== "false";
+  
+    const apiData = await getLandingPageData({ lang });
   return (
     <>
       <Header />
       <TopBanner isTopBannnerVisible={isTopBannnerVisible} />
-      <TopSecBanner courseData={courseData} />
-      <MobileCourseDetails courseData={courseData} />
+      <TopSecBanner courseData={apiData} />
+      <MobileCourseDetails courseData={apiData} />
       <div className="body-container">
         <div className="hidden md:block">
-          <SliderNav navSectionData={courseData.data.sections} />
+          <SliderNav navSectionData={apiData.data.sections} />
         </div>
-        <Description courseData={courseData} />
+        <Description courseData={apiData} />
       </div>
       <div className="my-10 border-t border-[#dbe1eb] flex justify-around items-center">
         <div className="mt-5 flex flex-col md:flex-row items-center gap-3">
