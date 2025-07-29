@@ -1,25 +1,18 @@
-import TopBanner from "@/component/top-banner";
-import Header from "@/component/header";
-import Description from "@/component/description";
-import SliderNav from "@/component/slider-nav";
-import MobileCourseDetails from "@/component/course-details-mobile/MobileCourseDetails";
-import Image from "next/image";
-import TopSecBanner from "@/component/TopSecBanner";
 import { getLandingPageData } from "@/api/apidata";
+import MobileCourseDetails from "@/component/course-details-mobile/MobileCourseDetails";
+import Description from "@/component/description";
+import Header from "@/component/header";
+import SliderNav from "@/component/slider-nav";
+import TopBanner from "@/component/top-banner";
+import TopSecBanner from "@/component/TopSecBanner";
 import { Metadata } from "next";
-
-interface Props {
-  searchParams: { lang?: "en" | "bn"; banner?: string };
-  courseData: ApiResponse;
-  isTopBannnerVisible: boolean;
-}
-
+import Image from "next/image";
 
 
 export async function generateMetadata({
   searchParams,
 }: {
-  searchParams: { lang?: "en" | "bn"; banner?: string };
+  searchParams: Promise<{ lang?: "en" | "bn"; banner?: string }>;
 }): Promise<Metadata> {
   const apiData = await getLandingPageData({ lang:"bn" });
 
